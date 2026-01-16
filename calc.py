@@ -51,7 +51,7 @@ def scenarios(min_v, max_v):
         return [("Fixed", min_v)]
     d = max_v - min_v
     return [
-        ("Minimum", min_v),
+        ("Minimum Median", min_v),
         ("Median", min_v + d // 3),
         ("Higher Median", min_v + 2 * d // 3),
     ]
@@ -68,6 +68,7 @@ def calc_xp_c():
             print(BOLD + CYAN + "Darkest Age — Calculator" + RESET)
             print("(Ctrl+C to close or 0 to return to main screen)\n")
             print(BOLD + CYAN + "New XP/C Calculation" + RESET)
+            print("="*40)
             
             m = int(input("Mobs killed: "))
 
@@ -97,8 +98,6 @@ def calc_xp_c():
 
             print()
             print(BOLD + MAGENTA + "Results per scenario:" + RESET)
-            now = datetime.now()
-            print(BOLD + YELLOW + f"Current time: {now.strftime('%H:%M')}\n" + RESET)
             print("-" * 40)
 
             for i, (label, xp_val) in enumerate(xp_scen):
@@ -133,6 +132,7 @@ def calc_xp_c():
                         print(YELLOW + "-" * 40)
                         print(GREEN + "Time until evolving: 0h 0m" + RESET)
                     else:
+                        now = datetime.now()
                         horas_para_level = xp_falta / xp_h
                         finish_time = now + timedelta(hours=horas_para_level)
 
@@ -156,6 +156,7 @@ def calc_io():
             print(BOLD + CYAN + "\nDarkest Age — Calculator" + RESET)
             print("(Ctrl+C to close or 0 to return to main screen)\n")
             print(BOLD + CYAN + "New Infernal Ore Calculation" + RESET)
+            print("="*40)
             
             o = int(input("Ores owned: "))
 
@@ -170,7 +171,7 @@ def calc_io():
 
             print("\n")
             print("-" * 40)
-            print(BOLD + MAGENTA + "Results per scenario:" + RESET)
+            print(BOLD + MAGENTA + "Results:" + RESET)
 
             print(f"Total value without tax: {_v}")
             print(f"Total value with tax: {v}")
@@ -187,7 +188,8 @@ def u_market():
 
         os.system(command)
         print(BOLD + CYAN + "Darkest Age — Calculator" + RESET)
-        print("(Ctrl+C or 0 to close)\n\n")
+        print("(Ctrl+C or 0 to close)\n")
+        print("="*40)
         market = load_market()
         total_items = sum(item['quantity'] for item in market)
         total_gold = sum(item['quantity'] * item['price'] for item in market)
@@ -195,11 +197,11 @@ def u_market():
         _g = total_gold * 0.10
         g = total_gold - _g
 
-        print("\n" + "="*40)
+        print("\n" + "-"*40)
         print(f"Nº of items on the list: {total_items}")
         print(f"Gold total expected (with tax): {g}")
-        print("="*40)
-        print("1 - See list")
+        print("-"*40)
+        print("\n1 - See list")
         print("2 - Add item to list")
         print("3 - Remove item from list")
         print("0 - Return")
@@ -260,12 +262,14 @@ def main():
         try:
             os.system(command)
             print(BOLD + CYAN + "Darkest Age — Calculator" + RESET)
-            print("(Ctrl+C or 0 to close)\n\n")
+            print("(Ctrl+C or 0 to close)\n")
+            print("="*40)
 
             print("1 - XP and Crowns Calculator")
             print("2 - Infernal Ore Price Calculator")
             print("3 - Market List")
             print("0 - Close")
+            print("="*40)
 
             a = int(input("\n-> "))
 
@@ -278,6 +282,9 @@ def main():
             if a == 3:
                 os.system(command)
                 u_market()
+            if a == 0:
+                print("\nLeaving...")
+                sys.exit(0)
 
         except KeyboardInterrupt:
             print("\nLeaving...")
