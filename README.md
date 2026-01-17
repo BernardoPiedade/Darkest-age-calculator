@@ -1,3 +1,6 @@
+Works in any command line that runs python3.
+It was tested in Windows 11 and OpenSuse.
+
 <img width="600" height="363" alt="Captura de ecrã 2026-01-17 012055" src="https://github.com/user-attachments/assets/9e6e04b9-9ee1-430f-9300-2db767e649f4" />
 <img width="597" height="643" alt="Captura de ecrã 2026-01-17 012130" src="https://github.com/user-attachments/assets/6eb27fef-78d5-4a59-bf8b-cba76e9a1834" />
 <img width="600" height="1011" alt="Captura de ecrã 2026-01-17 012213" src="https://github.com/user-attachments/assets/5db0507a-5cdd-46b7-b19d-2eec2201d8d2" />
