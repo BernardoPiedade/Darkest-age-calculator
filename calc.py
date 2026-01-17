@@ -155,7 +155,7 @@ def calc_io():
 
             print(BOLD + CYAN + "\nDarkest Age — Calculator" + RESET)
             print("(Ctrl+C to close or 0 to return to main screen)\n")
-            print(BOLD + CYAN + "New Infernal Ore Calculation" + RESET)
+            print(BOLD + CYAN + "New Infernal Ore Market Price Calculation" + RESET)
             print("="*40)
             
             o = int(input("Ores owned: "))
@@ -266,7 +266,7 @@ def main():
             print("="*40)
 
             print("1 - XP and Crowns Calculator")
-            print("2 - Infernal Ore Price Calculator")
+            print("2 - Infernal Ore Market Price Calculator")
             print("3 - Market List")
             print("0 - Close")
             print("="*40)
